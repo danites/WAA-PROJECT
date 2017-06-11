@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title>lists</title>
+</h:head>
+<h:body>
+	<h1>Flights list</h1>
+	<h:form id="contact">
+		
+
+
+		<h:dataTable id="list" binding="#{list}" value="#{flightService.findAll()}" var="p" border="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+    				
+    				<h:outputText value="#{p.id }" />
+    			</h:column>
+			<h:column>
+				<f:facet name="header">ArrivalDate</f:facet>
+    				
+    				<h:outputText value="#{p.arrivalDate}" />
+    			</h:column>
+			<h:column>
+				<f:facet name="header">ArrivalTime</f:facet>
+    				<h:outputText value="#{p.arrivalTime}" />
+    			</h:column>
+    			<h:column>
+				<f:facet name="header">DepartureDate</f:facet>
+    				<h:outputText value="#{p.departureDate}" />
+    			</h:column>
+    			<h:column>
+				<f:facet name="header">DepartureTime</f:facet>
+    				<h:outputText value="#{p.departureTime}" />
+    			</h:column>
+    			<h:column>
+			<f:facet name="header">Origin Airports</f:facet>
+			(<h:outputText value="#{p.origin.airportcode}" />)
+			<h:outputText value="#{p.origin.name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Destination Airports</f:facet>
+			(<h:outputText value="#{p.destination.airportcode}" />)
+			<h:outputText value="#{p.destination.name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Airplane Model</f:facet>
+		<h:outputText value="#{p.airplane.model}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Airplane Capacity</f:facet>
+			<h:outputText value="#{p.airplane.capacity}" />
+		</h:column> 
+    			 <!-- <h:column>
+				<f:facet name="header">FlightNR</f:facet>
+    				<h:outputText value="#{p.airplane.flightnr}" />
+    			</h:column>
+    			
+    			
+    			<h:column>
+				<f:facet name="header">Airplane-Capacity</f:facet>
+    				<h:outputText value="#{p.airplane.capacity}" />
+    			</h:column>
+    			<h:column>
+				<f:facet name="header">Destination-Id</f:facet>
+    				<h:outputText value="#{p.airplane.name}" />
+    			</h:column>
+    			<h:column>
+				<f:facet name="header">Origin-Id</f:facet>
+    				<h:outputText value="#{p.airplane.country}" />
+    			</h:column> -->
+ 	
+ </h:dataTable>
+
+	</h:form>
+</h:body>
+</html>
