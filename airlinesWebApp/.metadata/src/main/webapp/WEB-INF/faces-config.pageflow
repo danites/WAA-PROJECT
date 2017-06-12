@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14971119930010" configfile="/airlinesWebApp/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14971119930010" configfile="/airlinesWebApp/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf14971978667513" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14971978667514 pf14971984244286 pf14971984581878 pf149719853645010 pf149719927358512" inlinks="pf149719927358512" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" id="pf14971978667515" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14971978667514" path="home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Flights.xhtml" id="pf14971984244287" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14971984244286" path="Flights.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Airline.xhtml" id="pf14971984581879" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14971984581878" path="Airline.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="AirLineCrud.xhtml" id="pf149719853645011" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf149719853645010" path="AirLineCrud.xhtml"/>
+  <links id="pf14971978667514" target="pf14971978667515" source="pf14971978667513" outcome="home"/>
+  <links id="pf14971984244286" target="pf14971984244287" source="pf14971978667513" outcome="flight"/>
+  <links id="pf14971984581878" target="pf14971984581879" source="pf14971978667513" outcome="airline"/>
+  <links id="pf149719853645010" target="pf149719853645011" source="pf14971978667513" outcome="airlinecrud"/>
+  <links id="pf149719927358512" target="pf14971978667513" source="pf14971978667513" outcome="index"/>
+</pageflow:Pageflow>

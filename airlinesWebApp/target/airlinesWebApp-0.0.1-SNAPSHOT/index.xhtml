@@ -6,16 +6,20 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <h:head>
-	<title>home</title>
+	<title>Airline app</title>
 </h:head>
 <h:body>
+
+    The Server is up!
+
+Rest Services are at
+/rs/hello
+/rs/hello/airline
+    <br />
 	<h:form>
 		<h:panelGrid columns="1">
-			<h1>WELCOME TO SFO INTERNATIONAL AIRLINES </h1>
 			
-			<h:link value="Click Here to see FlightLists" outcome="Flights" />
-			<h:link value="Here are different airlines" outcome="AirLineCrud" />
-			<h:link value="airline crud" outcome="Airline" />
+			<h:link outcome="home" >GO To Home</h:link>
 		</h:panelGrid>
 	</h:form>
 </h:body>

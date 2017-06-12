@@ -6,7 +6,7 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	
+	<h:outputStylesheet library="css" name="table-style.css" />
 </h:head>
 <h:body>
 
@@ -39,9 +39,9 @@
 		</h:commandButton>
 
 	</h:form>
-	<h:dataTable value="#{flightService.findAll()}" var="o" id="list" styleClass="order-table" headerClass="order-table-header"
+	<h:dataTable value="#{allservice.listFlight}" var="o" id="list"
+		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
-		
 		<h:column>
 			<f:facet name="header">Flight Number</f:facet>#{o.flightnr}
 		</h:column>
@@ -68,9 +68,7 @@
 		</h:column>
 
 	</h:dataTable>
-<h:form>
-	<h:commandButton value="Exit" action="home.xhtml"></h:commandButton>
-	</h:form>
+
 
 </h:body>
 </html>

@@ -11,9 +11,17 @@
     </h:head>
     <h:body>
 	<h1>Airlines Crud</h1>
-		
-    	<h:dataTable id="customerName" value="#{airlineService.findAll()}" var="p">
-		
+		<h:form>
+		<h2>Register</h2>
+			<h:outputLabel>Airline Id</h:outputLabel>
+    	   <h:inputText id="accNumber" binding="#{accNumber}"></h:inputText>
+			<h:outputLabel>Airline Name</h:outputLabel>
+    	   <h:inputText id="customerName" binding="#{customerName}"></h:inputText>
+    	   <h:commandButton value="submit" action="#{airlineService.findAll()}"></h:commandButton>
+    	</h:form>
+    	<h:dataTable id="ustomerName" value="#{airlineService.findAll()}" var="p">
+		<h:commandButton value="Delete" action="#{accountService.createAccount(accNumber.value,customerName.value)}"></h:commandButton>
+		<h:commandButton value="Update" action="#{accountService.createAccount(accNumber.value,customerName.value)}"></h:commandButton>
 		<h:column>
 			<f:facet name="header">Airline Id</f:facet>
 			<h:outputText value="#{p.id}" />
@@ -29,26 +37,23 @@
 			<f:facet name="header">Delete</f:facet>
 			<h:form>
 			
-			<h:commandButton value="Delete" action="#{airlineService.delete(p)}"></h:commandButton>
+			<h:commandButton value="Delete" ></h:commandButton>
 			</h:form>
 		</h:column>
 		<h:column>
 			<f:facet name="header">update</f:facet>
 			<h:form>
 			
-			<h:commandButton value="Edit" action="#{airlineService.update(p)}" ></h:commandButton>
+			<h:commandButton value="update" action="#{airlineService.delete(ustomerName)}"></h:commandButton>
 			</h:form>
 		</h:column>   
 		<h:column>
 			<f:facet name="header">save</f:facet>
 			<h:form>
 			
-			<h:commandButton value="save" action="NewFile.xhtml"></h:commandButton>
+			<h:commandButton value="save" ></h:commandButton>
 			</h:form>
 		</h:column>
 	</h:dataTable>
-	<h:form>
-	<h:commandButton value="Exit" action="home.xhtml"></h:commandButton>
-	</h:form>
      </h:body>
 </html>
